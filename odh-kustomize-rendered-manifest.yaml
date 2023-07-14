@@ -29095,7 +29095,7 @@ metadata:
   labels:
     app.kubernetes.io/name: data-science-pipelines-operator
   name: data-science-pipelines-operator-controller-manager
-  namespace: odh-applications
+  namespace: opendatahub
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
@@ -29103,7 +29103,7 @@ metadata:
   labels:
     app.kubernetes.io/name: data-science-pipelines-operator
   name: data-science-pipelines-operator-leader-election-role
-  namespace: odh-applications
+  namespace: opendatahub
 rules:
 - apiGroups:
   - ""
@@ -29417,7 +29417,7 @@ metadata:
   labels:
     app.kubernetes.io/name: data-science-pipelines-operator
   name: data-science-pipelines-operator-leader-election-rolebinding
-  namespace: odh-applications
+  namespace: opendatahub
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -29425,7 +29425,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: data-science-pipelines-operator-controller-manager
-  namespace: odh-applications
+  namespace: opendatahub
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
@@ -29440,7 +29440,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: data-science-pipelines-operator-controller-manager
-  namespace: odh-applications
+  namespace: opendatahub
 ---
 apiVersion: v1
 data:
@@ -29460,7 +29460,7 @@ data:
 kind: ConfigMap
 metadata:
   name: data-science-pipelines-operator-dspo-config-kk9dk74bk6
-  namespace: odh-applications
+  namespace: opendatahub
 ---
 apiVersion: v1
 data:
@@ -29479,7 +29479,7 @@ data:
 kind: ConfigMap
 metadata:
   name: data-science-pipelines-operator-dspo-parameters-mm6cd5894m
-  namespace: odh-applications
+  namespace: opendatahub
 ---
 apiVersion: v1
 kind: Service
@@ -29487,7 +29487,7 @@ metadata:
   labels:
     app.kubernetes.io/name: data-science-pipelines-operator
   name: data-science-pipelines-operator-service
-  namespace: odh-applications
+  namespace: opendatahub
 spec:
   ports:
   - name: metrics
@@ -29501,7 +29501,7 @@ metadata:
   labels:
     app.kubernetes.io/name: data-science-pipelines-operator
   name: data-science-pipelines-operator-controller-manager
-  namespace: odh-applications
+  namespace: opendatahub
 spec:
   replicas: 1
   selector:
@@ -29586,7 +29586,7 @@ apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
   name: data-science-pipelines-operator-service-monitor
-  namespace: odh-applications
+  namespace: opendatahub
 spec:
   endpoints:
   - path: /metrics
